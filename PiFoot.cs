@@ -346,7 +346,6 @@ namespace PiFoot
         nomeTime,
         pontos,
         saldo,
-
         vitorias,
         empates,
         derrotas
