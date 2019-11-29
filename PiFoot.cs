@@ -656,25 +656,6 @@ namespace PiFoot
 
             }
 
-            //Imprime tabela de resultados finais
-            //Imprime cabeçalho
-            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("Resultados finais do campeonato");
-            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine("Time                Pontos         Gols feitos    Gols tomados   Saldo de gols  Vitorias       Empates        Derrotas");
-            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------");
-            for (int i = 0; i < listaResultadosCampeonato.Count; i++){
-               writeLimit(listaResultadosCampeonato[i].getTime().getNome(), 20);
-               Console.Write("{0,-15}", listaResultadosCampeonato[i].getPontos());
-               Console.Write("{0,-15}", listaResultadosCampeonato[i].getGolsFeitos());
-               Console.Write("{0,-15}", listaResultadosCampeonato[i].getGolsTomados());
-               Console.Write("{0,-15}", listaResultadosCampeonato[i].getSaldo());
-               Console.Write("{0,-15}", listaResultadosCampeonato[i].getVitorias());
-               Console.Write("{0,-15}", listaResultadosCampeonato[i].getEmpates());
-               Console.Write("{0,-15}", listaResultadosCampeonato[i].getDerrotas());
-               Console.WriteLine("");
-            }
-            Console.WriteLine("\n");
 
             //Obtém o time campeão, como o primeiro da lista ordenada por
             // 1. Maior número de pontos
@@ -711,6 +692,27 @@ namespace PiFoot
 
             //Obtém o time campeão como o primeiro da lista ordenada
             Time timeCampeao = listaResultadosCampeonato[0].getTime();
+
+            //Imprime tabela de resultados finais
+            //Imprime cabeçalho
+            Console.WriteLine("-----------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Resultados finais do campeonato");
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine("Pos  Time                Pontos         Gols feitos    Gols tomados   Saldo de gols  Vitorias       Empates        Derrotas");
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");
+            for (int i = 0; i < listaResultadosCampeonato.Count; i++){
+                Console.Write("{0,-5}", i+1);
+                writeLimit(listaResultadosCampeonato[i].getTime().getNome(), 20);
+                Console.Write("{0,-15}", listaResultadosCampeonato[i].getPontos());
+                Console.Write("{0,-15}", listaResultadosCampeonato[i].getGolsFeitos());
+                Console.Write("{0,-15}", listaResultadosCampeonato[i].getGolsTomados());
+                Console.Write("{0,-15}", listaResultadosCampeonato[i].getSaldo());
+                Console.Write("{0,-15}", listaResultadosCampeonato[i].getVitorias());
+                Console.Write("{0,-15}", listaResultadosCampeonato[i].getEmpates());
+                Console.Write("{0,-15}", listaResultadosCampeonato[i].getDerrotas());
+                Console.WriteLine("");
+            }
+            Console.WriteLine("\n");
 
             //Imprime time campeão
             Console.WriteLine("O campeão é o time {0} : {1}!!!", timeCampeao.getNome(), timeCampeao.getGritoTorcida());
